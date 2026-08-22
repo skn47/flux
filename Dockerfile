@@ -10,7 +10,10 @@ FROM python:3.12-slim
 WORKDIR /app
 
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# torch's CPU-only build isn't on plain PyPI -- install it from PyTorch's own
+# wheel index first (see requirements.txt's own comment), then the rest.
+RUN pip install --no-cache-dir torch==2.13.0+cpu --index-url https://download.pytorch.org/whl/cpu \
+    && pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
