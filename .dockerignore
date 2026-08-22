@@ -1,0 +1,27 @@
+# Mirrors .gitignore, plus a few Docker-build-specific exclusions. Excluding
+# data/, lstm/models/, and backtest/ here matters a lot: without it, `docker
+# build` would copy the 13GB events.db into the build context on every build.
+# These are volume-mounted from the host at runtime instead (docker-compose.yml).
+
+.git/
+.venv/
+data/
+lstm/models/
+backtest/
+
+progress/
+knowledge/
+logs/
+
+.claude/
+
+nlp_classifier/checkpoints/
+ingestion/scheduler_status.json
+
+__pycache__/
+*.pyc
+*.pyo
+.mypy_cache/
+.pytest_cache/
+
+frontend/

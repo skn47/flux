@@ -1,0 +1,37 @@
+# Self-hosted deployment (see api/README.md's "Deployment" section for the
+# full runbook). Two services:
+#   - api: the FastAPI server, built from ./Dockerfile.
+#   - cloudflared: Cloudflare's free Quick Tunnel client -- exposes `api`
+#     publicly over HTTPS with no account, no domain, and no router
+#     port-forwarding. Prints a fresh https://<random>.trycloudflare.com URL
+#     to its logs on every start (`docker compose logs cloudflared`); that URL
+#     only changes when this container restarts (rare -- restart:
+#     unless-stopped means only a host reboot/crash), but when it does, update
+#     it in Vercel's VITE_API_BASE_URL and in API_CORS_ORIGINS below.
+#
+# `api` deliberately has no `ports:` mapping -- it is not reachable on any
+# host network interface, only from inside this compose network. The
+# Cloudflare Tunnel is the only path in from the public internet.
+#
+# API_CORS_ORIGINS is read from a repo-root `.env` file (docker compose loads
+# this automatically) -- set it there once the Vercel URL is known, e.g.:
+#   API_CORS_ORIGINS=https://flux-terminal.vercel.app
+services:
+  api:
+    build: .
+    restart: unless-stopped
+    environment:
+      - API_CORS_ORIGINS=${API_CORS_ORIGINS:-http://localhost:5173,http://127.0.0.1:5173}
+    volumes:
+      - ./data:/app/data
+      - ./lstm/models:/app/lstm/models
+      - ./backtest:/app/backtest
+    expose:
+      - "8000"
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    restart: unless-stopped
+    command: tunnel --no-autoupdate --url http://api:8000
+    depends_on:
+      - api

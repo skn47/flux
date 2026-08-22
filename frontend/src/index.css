@@ -1,0 +1,859 @@
+:root {
+  --bg-void: #05070A;
+  --bg-panel: #0B0F14;
+  --bg-panel-raised: #121822;
+  --bg-hover: #17202B;
+  --border: #1E2733;
+  --border-strong: #2A3542;
+  --text-h: #F2F5F9;
+  --text: #C7D0DC;
+  --text-dim: #6B7686;
+  --accent: #22D3EE;
+  --accent-purple: #B565F5;
+  --yes: #00E676;
+  --no: #FF1744;
+  --warn-bg: #2A1608;
+  --warn-border: #FF8A3D;
+  --sector-semiconductors: #3987e5;
+  --sector-financials: #d95926;
+  --sector-energy: #199e70;
+  --sector-pharma_biotech: #c98500;
+  --cat-amber: #f59e0b;
+  --cat-rose: #ec4899;
+
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", "DejaVu Sans Mono", monospace;
+  --font-sans: system-ui, "Segoe UI", Roboto, sans-serif;
+
+  font: 16px/150% var(--font-sans);
+  color-scheme: dark;
+  color: var(--text);
+  background: var(--bg-void);
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Fixed-viewport terminal layout: the tape/header/columns/slider are fixed
+   panes that scroll internally, rather than the whole page scrolling like a
+   normal multi-page site. */
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+h1, h2, h3 {
+  color: var(--text-h);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 24px;
+  margin: 12px 0 6px;
+}
+
+h2 {
+  font-size: 16px;
+  margin: 14px 0 6px;
+}
+
+h3 {
+  font-size: 13px;
+  margin: 10px 0 4px;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  margin: 0 20px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.app-wordmark {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-h);
+}
+
+.app-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.header-status {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 10px;
+  font-size: 11px;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-dot-live {
+  background: var(--yes);
+  box-shadow: 0 0 4px var(--yes);
+  animation: status-pulse 2s ease-in-out infinite;
+}
+
+.status-dot-stale {
+  background: var(--no);
+  box-shadow: 0 0 4px var(--no);
+}
+
+@keyframes status-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+.status-label {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.status-label-live {
+  color: var(--yes);
+}
+
+.status-label-stale {
+  color: var(--no);
+}
+
+.status-detail {
+  color: var(--text-dim);
+}
+
+.header-divider {
+  width: 1px;
+  height: 14px;
+  background: var(--border-strong);
+}
+
+.header-clock {
+  color: var(--text-dim);
+}
+
+.header-btn {
+  background: var(--bg-panel-raised);
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 5px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+
+.header-btn:hover {
+  color: var(--text-h);
+  background: var(--bg-hover);
+}
+
+.event-headline-link {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: var(--accent);
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+.event-headline-link:hover {
+  text-decoration: underline;
+}
+
+.chart-hint, .scope-caption {
+  font-size: 12px;
+  color: var(--text-dim);
+  margin: 4px 0 10px;
+}
+
+.headline-finding {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 6px 0 4px;
+}
+
+.error {
+  color: var(--no);
+}
+
+.panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 12px;
+}
+
+.panel-header {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+  margin: 0 0 8px;
+}
+
+.prediction-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 6px 0 12px;
+}
+
+.prediction-table th {
+  background: var(--bg-panel-raised);
+  color: var(--text-dim);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.prediction-table th, .prediction-table td {
+  border-bottom: 1px solid var(--border);
+  padding: 4px 8px;
+  text-align: left;
+}
+
+.prediction-table .yes {
+  color: var(--yes);
+  font-weight: 600;
+}
+
+.prediction-table .no {
+  color: var(--no);
+}
+
+.event-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.event-item {
+  border: 1px solid var(--border);
+  background: var(--bg-panel);
+  border-radius: 4px;
+  padding: 8px 10px;
+}
+
+.event-headline {
+  font-size: 13px;
+}
+
+.event-rank {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.event-path {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  margin: 4px 0;
+  color: var(--text-dim);
+}
+
+.event-meta {
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+.chart-legend {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 0;
+  margin: 6px 0 4px;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.legend-swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.badge-note {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-dim);
+  background: var(--bg-panel-raised);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 1px 6px;
+}
+
+.tier-badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--bg-panel-raised);
+  border: 1px solid;
+  border-radius: 12px;
+  padding: 3px 10px;
+  text-transform: capitalize;
+}
+
+.ticker-tag {
+  display: inline-block;
+  font-size: 11px;
+  color: var(--text);
+  background: var(--bg-panel-raised);
+  border: 1px solid;
+  border-radius: 3px;
+  padding: 1px 6px;
+  text-transform: capitalize;
+}
+
+.causality-scene {
+  position: relative;
+  width: 100%;
+  height: 420px;
+}
+
+.causality-scene canvas {
+  border-radius: 4px;
+}
+
+.causal-node-label {
+  font-size: 11px;
+  color: var(--text-dim);
+  background: rgba(11, 15, 20, 0.7);
+  padding: 1px 5px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.causal-node-label-focus {
+  color: var(--text-h);
+  font-weight: 700;
+}
+
+.causal-hover-label {
+  font-size: 11px;
+  color: var(--text-h);
+  background: var(--bg-panel-raised);
+  border: 1px solid var(--border-strong);
+  padding: 2px 7px;
+  border-radius: 3px;
+  white-space: nowrap;
+  text-transform: capitalize;
+}
+
+/* Non-blocking overlay inside the 3D scene -- deliberately NOT the shared
+   Modal/Drawer components, which are full-backdrop and would block orbit
+   interaction with the rest of the scene while a card is open. Reuses the
+   same color/spacing tokens for visual consistency. */
+.causal-node-card {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 280px;
+  max-height: calc(100% - 24px);
+  overflow-y: auto;
+  background: var(--bg-panel-raised);
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+  padding: 12px 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.causal-node-card-close {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-size: 16px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.causal-node-card-close:hover {
+  color: var(--text-h);
+}
+
+.causal-node-card-type {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-dim);
+  margin-bottom: 4px;
+}
+
+.causal-node-card-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-h);
+  margin-bottom: 8px;
+}
+
+.causal-node-card-narrative {
+  font-size: 12px;
+  color: var(--text);
+  line-height: 1.4;
+  margin: 0 0 10px;
+}
+
+.causal-node-card-link {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.causal-node-card-link:hover {
+  text-decoration: underline;
+}
+
+.source-link {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--border-strong);
+}
+
+.source-link:hover {
+  color: var(--text-h);
+  text-decoration-color: var(--text-dim);
+}
+
+.walk-forward-panel {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 4px 12px 12px;
+  background: var(--bg-panel);
+}
+
+/* --- Ticker tape ------------------------------------------------------- */
+
+.ticker-tape {
+  overflow: hidden;
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.tape-track {
+  display: inline-flex;
+  animation: tape-scroll 40s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tape-track {
+    animation: none;
+    overflow-x: auto;
+  }
+}
+
+@keyframes tape-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.tape-item {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 6px 16px;
+  font-size: 12px;
+  border-right: 1px solid var(--border);
+}
+
+.tape-ticker {
+  color: var(--text-h);
+  font-weight: 600;
+}
+
+/* --- Sector matrix ------------------------------------------------------ */
+
+.matrix-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.matrix-price-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1px;
+}
+
+.matrix-price {
+  font-size: 12px;
+  color: var(--text-h);
+}
+
+.matrix-delta {
+  font-size: 10px;
+}
+
+.matrix-tickers {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.matrix-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--border);
+  border-radius: 3px;
+  padding: 5px 8px;
+  cursor: pointer;
+  font: inherit;
+  color: var(--text);
+  width: 100%;
+  text-align: left;
+}
+
+.matrix-block:hover {
+  background: var(--bg-hover);
+}
+
+.matrix-block.selected {
+  border-color: var(--accent);
+  border-left-width: 3px;
+}
+
+.matrix-ticker {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.matrix-spark {
+  display: block;
+}
+
+/* --- Candlestick chart --------------------------------------------------- */
+
+.candlestick-wrap {
+  position: relative;
+}
+
+.candlestick-container {
+  width: 100%;
+  height: 460px;
+}
+
+.candlestick-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dim);
+  pointer-events: none;
+}
+
+.quick-range {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+
+.quick-range-btn {
+  background: var(--bg-panel-raised);
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 3px 9px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.quick-range-btn:hover {
+  color: var(--text-h);
+  background: var(--bg-hover);
+}
+
+.quick-range-btn.selected {
+  color: var(--bg-void);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* --- What-if simulator --------------------------------------------------- */
+
+.whatif {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.whatif-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.whatif-field select,
+.whatif-field input[type="range"] {
+  accent-color: var(--accent-purple);
+}
+
+.whatif-field select {
+  background: var(--bg-panel-raised);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 4px 6px;
+  font: inherit;
+}
+
+.whatif-countries {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.whatif-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--text);
+}
+
+.whatif-submit {
+  background: var(--accent-purple);
+  color: var(--bg-void);
+  border: none;
+  border-radius: 3px;
+  padding: 7px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.whatif-submit:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.whatif-result {
+  border-top: 1px solid var(--border);
+  padding-top: 8px;
+}
+
+/* --- Terminal layout ------------------------------------------------------ */
+
+.terminal-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr 300px;
+  gap: 10px;
+  padding: 10px 20px;
+  flex: 1;
+  min-height: 0;
+}
+
+.terminal-left,
+.terminal-center,
+.terminal-right {
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.terminal-left,
+.terminal-right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.osint-feed {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.osint-list {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+@media (max-width: 1100px) {
+  .terminal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .terminal-left,
+  .terminal-center,
+  .terminal-right {
+    overflow-y: visible;
+  }
+}
+
+/* --- Modal / drawer shells ------------------------------------------------ */
+
+.modal-backdrop,
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 7, 10, 0.7);
+  display: flex;
+  z-index: 100;
+}
+
+.modal-backdrop {
+  align-items: center;
+  justify-content: center;
+}
+
+.drawer-backdrop {
+  justify-content: flex-end;
+}
+
+.modal,
+.drawer {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-strong);
+  display: flex;
+  flex-direction: column;
+}
+
+.modal {
+  border-radius: 6px;
+  width: min(760px, 92vw);
+  max-height: 88vh;
+}
+
+.drawer {
+  width: min(480px, 92vw);
+  height: 100%;
+}
+
+.modal-header,
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.modal-body,
+.drawer-body {
+  padding: 12px 16px 20px;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+.modal-close:hover {
+  color: var(--text-h);
+}
+
+/* --- Tab bar (BacktestDrawer) --------------------------------------------- */
+
+.tab-bar {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.tab-btn:hover {
+  color: var(--text-h);
+}
+
+.tab-btn.selected {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}

@@ -1,0 +1,31 @@
+# Rebuilds and restarts the `api` container on the self-hosted runner
+# (installed on the same machine that runs the live deployment -- see
+# api/README.md's "Deployment" section for the one-time runner registration
+# steps). Deliberately minimal: docker-compose.yml's volume mounts mean data
+# (data/, lstm/models/, backtest/) is never touched by a redeploy, only the
+# application code baked into the image.
+#
+# The frontend is NOT deployed from this workflow -- Vercel's own GitHub
+# integration rebuilds it natively on every push once the project is
+# connected there, no custom Action needed.
+name: Deploy API
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "api/**"
+      - "src/flux_engine/**"
+      - "src/propagation/**"
+      - "config/**"
+      - "requirements.txt"
+      - "Dockerfile"
+      - "docker-compose.yml"
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rebuild and restart API container
+        run: docker compose up -d --build api

@@ -1,0 +1,2035 @@
+{
+  "alpha": 0.1,
+  "lo_pct": 5.0,
+  "hi_pct": 95.0,
+  "folds": [
+    {
+      "fold_id": 101,
+      "train": [
+        "2024-07-19",
+        "2025-07-08"
+      ],
+      "val": [
+        "2025-07-09",
+        "2025-08-21"
+      ],
+      "test": [
+        "2025-08-22",
+        "2025-10-31"
+      ],
+      "n_train_labels": 182,
+      "n_val_labels": 32,
+      "n_test_labels": 50
+    },
+    {
+      "fold_id": 102,
+      "train": [
+        "2024-07-19",
+        "2025-09-05"
+      ],
+      "val": [
+        "2025-09-08",
+        "2025-10-31"
+      ],
+      "test": [
+        "2025-11-03",
+        "2026-01-14"
+      ],
+      "n_train_labels": 224,
+      "n_val_labels": 40,
+      "n_test_labels": 50
+    },
+    {
+      "fold_id": 103,
+      "train": [
+        "2024-07-19",
+        "2025-11-05"
+      ],
+      "val": [
+        "2025-11-06",
+        "2026-01-14"
+      ],
+      "test": [
+        "2026-01-15",
+        "2026-03-27"
+      ],
+      "n_train_labels": 267,
+      "n_val_labels": 47,
+      "n_test_labels": 50
+    },
+    {
+      "fold_id": 104,
+      "train": [
+        "2024-07-19",
+        "2026-01-07"
+      ],
+      "val": [
+        "2026-01-08",
+        "2026-03-27"
+      ],
+      "test": [
+        "2026-03-30",
+        "2026-06-09"
+      ],
+      "n_train_labels": 309,
+      "n_val_labels": 55,
+      "n_test_labels": 50
+    }
+  ],
+  "calibration_fold_ids": [
+    101,
+    102,
+    103
+  ],
+  "heldout_fold_id": 104,
+  "train_results": [
+    {
+      "fold_id": 101,
+      "variant": "none",
+      "window_counts": {
+        "train": 3519,
+        "val": 69,
+        "test": 1150
+      },
+      "leakage_report": {
+        "windows_checked": {
+          "train": 3519,
+          "val": 69,
+          "test": 1150
+        },
+        "status": "no leakage found"
+      },
+      "best_epoch": 1,
+      "best_val_loss_scaled_mse": 0.8073320803434952,
+      "n_epochs_trained": 90,
+      "checkpoint_path": "/home/h/Flux/lstm/models/seq2seq_walk_forward/fold101_none.pt",
+      "split_boundaries": {
+        "train": [
+          "2024-07-19",
+          "2025-07-08"
+        ],
+        "val": [
+          "2025-07-09",
+          "2025-08-21"
+        ],
+        "test": [
+          "2025-08-22",
+          "2025-10-31"
+        ]
+      }
+    },
+    {
+      "fold_id": 101,
+      "variant": "concat",
+      "window_counts": {
+        "train": 3519,
+        "val": 69,
+        "test": 1150
+      },
+      "leakage_report": {
+        "windows_checked": {
+          "train": 3519,
+          "val": 69,
+          "test": 1150
+        },
+        "status": "no leakage found"
+      },
+      "best_epoch": 1,
+      "best_val_loss_scaled_mse": 0.8097970554794091,
+      "n_epochs_trained": 90,
+      "checkpoint_path": "/home/h/Flux/lstm/models/seq2seq_walk_forward/fold101_concat.pt",
+      "split_boundaries": {
+        "train": [
+          "2024-07-19",
+          "2025-07-08"
+        ],
+        "val": [
+          "2025-07-09",
+          "2025-08-21"
+        ],
+        "test": [
+          "2025-08-22",
+          "2025-10-31"
+        ]
+      }
+    },
+    {
+      "fold_id": 102,
+      "variant": "none",
+      "window_counts": {
+        "train": 4485,
+        "val": 253,
+        "test": 1150
+      },
+      "leakage_report": {
+        "windows_checked": {
+          "train": 4485,
+          "val": 253,
+          "test": 1150
+        },
+        "status": "no leakage found"
+      },
+      "best_epoch": 7,
+      "best_val_loss_scaled_mse": 0.9608499393632761,
+      "n_epochs_trained": 90,
+      "checkpoint_path": "/home/h/Flux/lstm/models/seq2seq_walk_forward/fold102_none.pt",
+      "split_boundaries": {
+        "train": [
+          "2024-07-19",
+          "2025-09-05"
+        ],
+        "val": [
+          "2025-09-08",
+          "2025-10-31"
+        ],
+        "test": [
+          "2025-11-03",
+          "2026-01-14"
+        ]
+      }
+    },
+    {
+      "fold_id": 102,
+      "variant": "concat",
+      "window_counts": {
+        "train": 4485,
+        "val": 253,
+        "test": 1150
+      },
+      "leakage_report": {
+        "windows_checked": {
+          "train": 4485,
+          "val": 253,
+          "test": 1150
+        },
+        "status": "no leakage found"
+      },
+      "best_epoch": 4,
+      "best_val_loss_scaled_mse": 0.9619014359745583,
+      "n_epochs_trained": 90,
+      "checkpoint_path": "/home/h/Flux/lstm/models/seq2seq_walk_forward/fold102_concat.pt",
+      "split_boundaries": {
+        "train": [
+          "2024-07-19",
+          "2025-09-05"
+        ],
+        "val": [
+          "2025-09-08",
+          "2025-10-31"
+        ],
+        "test": [
+          "2025-11-03",
+          "2026-01-14"
+        ]
+      }
+    },
+    {
+      "fold_id": 103,
+      "variant": "none",
+      "window_counts": {
+        "train": 5474,
+        "val": 414,
+        "test": 1150
+      },
+      "leakage_report": {
+        "windows_checked": {
+          "train": 5474,
+          "val": 414,
+          "test": 1150
+        },
+        "status": "no leakage found"
+      },
+      "best_epoch": 9,
+      "best_val_loss_scaled_mse": 0.8083465421833278,
+      "n_epochs_trained": 90,
+      "checkpoint_path": "/home/h/Flux/lstm/models/seq2seq_walk_forward/fold103_none.pt",
+      "split_boundaries": {
+        "train": [
+          "2024-07-19",
+          "2025-11-05"
+        ],
+        "val": [
+          "2025-11-06",
+          "2026-01-14"
+        ],
+        "test": [
+          "2026-01-15",
+          "2026-03-27"
+        ]
+      }
+    },
+    {
+      "fold_id": 103,
+      "variant": "concat",
+      "window_counts": {
+        "train": 5474,
+        "val": 414,
+        "test": 1150
+      },
+      "leakage_report": {
+        "windows_checked": {
+          "train": 5474,
+          "val": 414,
+          "test": 1150
+        },
+        "status": "no leakage found"
+      },
+      "best_epoch": 3,
+      "best_val_loss_scaled_mse": 0.8065981268882751,
+      "n_epochs_trained": 90,
+      "checkpoint_path": "/home/h/Flux/lstm/models/seq2seq_walk_forward/fold103_concat.pt",
+      "split_boundaries": {
+        "train": [
+          "2024-07-19",
+          "2025-11-05"
+        ],
+        "val": [
+          "2025-11-06",
+          "2026-01-14"
+        ],
+        "test": [
+          "2026-01-15",
+          "2026-03-27"
+        ]
+      }
+    },
+    {
+      "fold_id": 104,
+      "variant": "none",
+      "window_counts": {
+        "train": 6440,
+        "val": 598,
+        "test": 1150
+      },
+      "leakage_report": {
+        "windows_checked": {
+          "train": 6440,
+          "val": 598,
+          "test": 1150
+        },
+        "status": "no leakage found"
+      },
+      "best_epoch": 4,
+      "best_val_loss_scaled_mse": 1.123147744199504,
+      "n_epochs_trained": 90,
+      "checkpoint_path": "/home/h/Flux/lstm/models/seq2seq_walk_forward/fold104_none.pt",
+      "split_boundaries": {
+        "train": [
+          "2024-07-19",
+          "2026-01-07"
+        ],
+        "val": [
+          "2026-01-08",
+          "2026-03-27"
+        ],
+        "test": [
+          "2026-03-30",
+          "2026-06-09"
+        ]
+      }
+    },
+    {
+      "fold_id": 104,
+      "variant": "concat",
+      "window_counts": {
+        "train": 6440,
+        "val": 598,
+        "test": 1150
+      },
+      "leakage_report": {
+        "windows_checked": {
+          "train": 6440,
+          "val": 598,
+          "test": 1150
+        },
+        "status": "no leakage found"
+      },
+      "best_epoch": 5,
+      "best_val_loss_scaled_mse": 1.1225940866215174,
+      "n_epochs_trained": 90,
+      "checkpoint_path": "/home/h/Flux/lstm/models/seq2seq_walk_forward/fold104_concat.pt",
+      "split_boundaries": {
+        "train": [
+          "2024-07-19",
+          "2026-01-07"
+        ],
+        "val": [
+          "2026-01-08",
+          "2026-03-27"
+        ],
+        "test": [
+          "2026-03-30",
+          "2026-06-09"
+        ]
+      }
+    }
+  ],
+  "calibrations": {
+    "none": {
+      "variant": "none",
+      "horizon": 30,
+      "alpha": 0.1,
+      "lo_pct": 5.0,
+      "hi_pct": 95.0,
+      "q_hat": [
+        0.03544485838387482,
+        0.035899749309095265,
+        0.03661149999609778,
+        0.03732639595920009,
+        0.03760247576079496,
+        0.03747910348453891,
+        0.037588366076947224,
+        0.038060918147024045,
+        0.038008352707527594,
+        0.03805303895494352,
+        0.03774656597261753,
+        0.03784195711783099,
+        0.03785422488269952,
+        0.03798713554868711,
+        0.03810959142674682,
+        0.03790201513421779,
+        0.037951561662790956,
+        0.03819758119005736,
+        0.03804444990142999,
+        0.038394154330183825,
+        0.03815460232091423,
+        0.03840551400884513,
+        0.03823538629981414,
+        0.03879758483822015,
+        0.038076584045948415,
+        0.03843641208489517,
+        0.039287126864205164,
+        0.03951481771044163,
+        0.039593337879634816,
+        0.03995954616294672
+      ],
+      "n_cal_per_step": [
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450
+      ],
+      "fold_ids_used": [
+        101,
+        102,
+        103
+      ],
+      "computed_at": "2026-08-14T04:36:19.385123+00:00"
+    },
+    "concat": {
+      "variant": "concat",
+      "horizon": 30,
+      "alpha": 0.1,
+      "lo_pct": 5.0,
+      "hi_pct": 95.0,
+      "q_hat": [
+        0.03643317711767826,
+        0.03673387747270606,
+        0.03717066140823487,
+        0.03745410444917498,
+        0.03741797051739115,
+        0.03780647707897148,
+        0.037532214977337164,
+        0.038149041382064895,
+        0.03816173882853273,
+        0.0384362871507445,
+        0.03758478491883841,
+        0.03777843092686971,
+        0.0380818485521589,
+        0.038321098581982085,
+        0.0383043951356792,
+        0.038107149574656725,
+        0.03816994631397421,
+        0.038054601196236555,
+        0.038444302248241226,
+        0.038442001633697806,
+        0.03848195877072745,
+        0.03834546365384305,
+        0.0385715672138812,
+        0.03888337934539369,
+        0.03878548466604135,
+        0.038709123700082025,
+        0.039038891885863146,
+        0.039265953308906934,
+        0.03954308784384161,
+        0.039546552967976066
+      ],
+      "n_cal_per_step": [
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450,
+        3450
+      ],
+      "fold_ids_used": [
+        101,
+        102,
+        103
+      ],
+      "computed_at": "2026-08-14T04:36:32.234345+00:00"
+    }
+  },
+  "heldout_report": {
+    "none": {
+      "raw": [
+        {
+          "horizon_step": 1,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 6.608695652173913,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 2,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 5.217391304347826,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 3,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.695652173913044,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 4,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.782608695652174,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 5,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.434782608695652,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 6,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.608695652173913,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 7,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.434782608695652,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 8,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.173913043478261,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 9,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.3478260869565215,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 10,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 3.8260869565217392,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 11,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.3478260869565215,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 12,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.956521739130435,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 13,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.3478260869565215,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 14,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.956521739130435,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 15,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 3.9130434782608696,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 16,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 3.8260869565217392,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 17,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.521739130434782,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 18,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 3.4782608695652173,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 19,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.0,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 20,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 3.0434782608695654,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 21,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.956521739130435,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 22,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.173913043478261,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 23,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.521739130434782,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 24,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.260869565217392,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 25,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.782608695652174,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 26,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.869565217391305,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 27,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.260869565217392,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 28,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.3478260869565215,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 29,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.173913043478261,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 30,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.3478260869565215,
+          "n_windows": 1150
+        }
+      ],
+      "calibrated": [
+        {
+          "horizon_step": 1,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.91304347826087,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 2,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 84.34782608695652,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 3,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 84.26086956521739,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 4,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 84.78260869565217,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 5,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 84.8695652173913,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 6,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 84.34782608695652,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 7,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 84.26086956521739,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 8,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 84.78260869565217,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 9,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 84.78260869565217,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 10,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 84.0,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 11,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 84.0,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 12,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 84.17391304347827,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 13,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.65217391304348,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 14,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 84.0,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 15,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.91304347826087,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 16,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.47826086956522,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 17,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 82.78260869565217,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 18,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 82.78260869565217,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 19,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 82.26086956521739,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 20,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 82.34782608695652,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 21,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 82.34782608695652,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 22,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 82.26086956521739,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 23,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 82.0,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 24,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 82.08695652173913,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 25,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 82.0,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 26,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 81.91304347826087,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 27,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 82.6086956521739,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 28,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.82608695652173,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 29,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.3913043478261,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 30,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 84.69565217391305,
+          "n_windows": 1150
+        }
+      ],
+      "raw_summary": {
+        "mean": 4.440579710144927,
+        "min": 3.0434782608695654,
+        "max": 6.608695652173913
+      },
+      "calibrated_summary": {
+        "mean": 83.49565217391303,
+        "min": 81.91304347826087,
+        "max": 84.8695652173913
+      },
+      "n_windows": 1150
+    },
+    "concat": {
+      "raw": [
+        {
+          "horizon_step": 1,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 5.6521739130434785,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 2,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.434782608695652,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 3,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.782608695652174,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 4,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.608695652173913,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 5,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.869565217391305,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 6,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 3.8260869565217392,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 7,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.0,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 8,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.608695652173913,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 9,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.521739130434782,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 10,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 3.391304347826087,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 11,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 3.652173913043478,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 12,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.086956521739131,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 13,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.260869565217392,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 14,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.0,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 15,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 3.8260869565217392,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 16,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 3.0434782608695654,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 17,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 3.391304347826087,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 18,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 3.217391304347826,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 19,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 2.5217391304347827,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 20,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 3.217391304347826,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 21,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 2.9565217391304346,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 22,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 3.3043478260869565,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 23,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 3.3043478260869565,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 24,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 2.9565217391304346,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 25,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 3.4782608695652173,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 26,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.0,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 27,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 3.652173913043478,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 28,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 3.4782608695652173,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 29,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 2.9565217391304346,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 30,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 3.217391304347826,
+          "n_windows": 1150
+        }
+      ],
+      "calibrated": [
+        {
+          "horizon_step": 1,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 84.69565217391305,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 2,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 84.34782608695652,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 3,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 84.78260869565217,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 4,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 85.1304347826087,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 5,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 84.34782608695652,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 6,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 84.17391304347827,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 7,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 84.0,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 8,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 84.69565217391305,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 9,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 84.69565217391305,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 10,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.91304347826087,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 11,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.47826086956522,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 12,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.73913043478261,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 13,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.73913043478261,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 14,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.91304347826087,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 15,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.82608695652173,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 16,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.1304347826087,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 17,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 82.6086956521739,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 18,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 82.52173913043478,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 19,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 82.08695652173913,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 20,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 82.17391304347827,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 21,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 82.26086956521739,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 22,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 82.08695652173913,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 23,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 81.65217391304348,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 24,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 82.0,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 25,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 82.0,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 26,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 81.91304347826087,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 27,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 82.26086956521739,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 28,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.3913043478261,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 29,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.30434782608695,
+          "n_windows": 1150
+        },
+        {
+          "horizon_step": 30,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.82608695652173,
+          "n_windows": 1150
+        }
+      ],
+      "raw_summary": {
+        "mean": 3.7739130434782613,
+        "min": 2.5217391304347827,
+        "max": 5.6521739130434785
+      },
+      "calibrated_summary": {
+        "mean": 83.35652173913043,
+        "min": 81.65217391304348,
+        "max": 85.1304347826087
+      },
+      "n_windows": 1150
+    }
+  },
+  "production_report": {
+    "none": {
+      "raw": [
+        {
+          "horizon_step": 1,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 7.053140096618358,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 2,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 6.570048309178744,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 3,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 5.024154589371981,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 4,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 5.507246376811594,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 5,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.154589371980676,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 6,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 5.217391304347826,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 7,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 6.280193236714976,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 8,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 5.314009661835748,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 9,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 5.314009661835748,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 10,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.444444444444445,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 11,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.830917874396135,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 12,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 6.086956521739131,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 13,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.830917874396135,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 14,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 5.603864734299517,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 15,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 5.024154589371981,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 16,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 5.217391304347826,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 17,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.927536231884058,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 18,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 3.864734299516908,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 19,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 5.507246376811594,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 20,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 3.9613526570048307,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 21,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 5.314009661835748,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 22,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 5.120772946859903,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 23,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.830917874396135,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 24,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 3.864734299516908,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 25,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 6.086956521739131,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 26,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 6.666666666666667,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 27,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 5.120772946859903,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 28,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.830917874396135,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 29,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.154589371980676,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 30,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.927536231884058,
+          "n_windows": 1035
+        }
+      ],
+      "calibrated": [
+        {
+          "horizon_step": 1,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.57487922705315,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 2,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.76811594202898,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 3,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 84.44444444444444,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 4,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 84.92753623188406,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 5,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 84.54106280193237,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 6,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 84.34782608695652,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 7,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 84.54106280193237,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 8,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.96135265700484,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 9,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 84.15458937198068,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 10,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.57487922705315,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 11,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.67149758454106,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 12,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.57487922705315,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 13,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 82.9951690821256,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 14,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.09178743961353,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 15,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.18840579710145,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 16,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 82.80193236714976,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 17,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 81.93236714975845,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 18,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 82.22222222222223,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 19,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 81.64251207729468,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 20,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 81.54589371980677,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 21,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 81.64251207729468,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 22,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 82.02898550724638,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 23,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 82.31884057971014,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 24,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 82.512077294686,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 25,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 82.9951690821256,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 26,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.28502415458937,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 27,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.57487922705315,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 28,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 84.05797101449275,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 29,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.86473429951691,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 30,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 85.1207729468599,
+          "n_windows": 1035
+        }
+      ],
+      "raw_summary": {
+        "mean": 5.18840579710145,
+        "min": 3.864734299516908,
+        "max": 7.053140096618358
+      },
+      "calibrated_summary": {
+        "mean": 83.33011272141707,
+        "min": 81.54589371980677,
+        "max": 85.1207729468599
+      },
+      "n_windows": 1035
+    },
+    "concat": {
+      "raw": [
+        {
+          "horizon_step": 1,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 5.4106280193236715,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 2,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.927536231884058,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 3,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.251207729468599,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 4,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 5.120772946859903,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 5,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 5.4106280193236715,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 6,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.3478260869565215,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 7,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.927536231884058,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 8,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.251207729468599,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 9,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.63768115942029,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 10,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 3.4782608695652173,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 11,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.541062801932367,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 12,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 3.57487922705314,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 13,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 3.6714975845410627,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 14,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 3.4782608695652173,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 15,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 2.898550724637681,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 16,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.251207729468599,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 17,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 3.4782608695652173,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 18,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.057971014492754,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 19,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 3.7681159420289854,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 20,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.057971014492754,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 21,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 3.864734299516908,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 22,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 3.4782608695652173,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 23,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 3.285024154589372,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 24,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 3.57487922705314,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 25,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 3.9613526570048307,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 26,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.444444444444445,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 27,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.734299516908212,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 28,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.251207729468599,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 29,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.057971014492754,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 30,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 4.3478260869565215,
+          "n_windows": 1035
+        }
+      ],
+      "calibrated": [
+        {
+          "horizon_step": 1,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 84.34782608695652,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 2,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.57487922705315,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 3,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 84.54106280193237,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 4,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 84.83091787439614,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 5,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 84.2512077294686,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 6,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 84.05797101449275,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 7,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.86473429951691,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 8,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.67149758454106,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 9,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.67149758454106,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 10,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.57487922705315,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 11,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.28502415458937,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 12,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 82.70531400966183,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 13,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 82.9951690821256,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 14,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 82.9951690821256,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 15,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 82.89855072463769,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 16,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 82.41545893719807,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 17,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 81.64251207729468,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 18,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 81.93236714975845,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 19,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 81.54589371980677,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 20,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 81.44927536231884,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 21,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 81.54589371980677,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 22,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 81.73913043478261,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 23,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 82.1256038647343,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 24,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 82.6086956521739,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 25,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 82.89855072463769,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 26,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 82.70531400966183,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 27,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.57487922705315,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 28,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.57487922705315,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 29,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 83.57487922705315,
+          "n_windows": 1035
+        },
+        {
+          "horizon_step": 30,
+          "nominal_coverage_pct": 90.0,
+          "empirical_coverage_pct": 84.2512077294686,
+          "n_windows": 1035
+        }
+      ],
+      "raw_summary": {
+        "mean": 4.151368760064412,
+        "min": 2.898550724637681,
+        "max": 5.4106280193236715
+      },
+      "calibrated_summary": {
+        "mean": 83.0950080515298,
+        "min": 81.44927536231884,
+        "max": 84.83091787439614
+      },
+      "n_windows": 1035
+    }
+  }
+}

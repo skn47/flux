@@ -1,0 +1,114 @@
+# Phase A ingestion dependencies.
+# Installed into .venv with: pip install requests feedparser
+# Pinned via `pip freeze` on 2026-07-18 for reproducibility (Python 3.12.3).
+requests==2.34.2
+feedparser==6.0.12
+
+# Transitive dependencies of the above, pinned for a fully reproducible venv.
+certifi==2026.6.17
+charset-normalizer==3.4.9
+idna==3.18
+sgmllib3k==1.0.0
+urllib3==2.7.0
+
+# Phase B labeling dependencies.
+# Installed into .venv with: pip install anthropic
+# Pinned via `pip freeze` on 2026-07-19. Only used by labeling/llm_labeler.py,
+# which is key-gated on ANTHROPIC_API_KEY and skips cleanly (no import-time
+# crash even if this package were absent) if the key is unset -- see
+# labeling/README.md.
+anthropic==0.117.0
+
+# Phase C nlp_classifier dependencies.
+# Installed into .venv with:
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+# CPU-only build (no GPU in this environment). Used purely as a tensor/
+# autograd library for a from-scratch model (nlp_classifier/model.py) --
+# no pretrained weights are loaded from torch or any other package.
+torch==2.13.0+cpu
+
+# Transitive dependencies of anthropic, pinned for a fully reproducible venv.
+annotated-types==0.7.0
+anyio==4.14.2
+distro==1.9.0
+docstring_parser==0.18.0
+h11==0.16.0
+httpcore==1.0.9
+httpx==0.28.1
+jiter==0.16.0
+pydantic==2.13.4
+pydantic_core==2.46.4
+sniffio==1.3.1
+typing-inspection==0.4.2
+typing_extensions==4.16.0
+
+# Phase F price ingestion dependencies (price/ package).
+# Installed into .venv with: pip install yfinance
+# Pulls daily OHLCV history from Yahoo Finance for the 5 tracked tickers
+# (config/mvp_scope.py TRACKED_TICKERS). No API key needed. Pinned via
+# `pip freeze` on 2026-07-21.
+yfinance==1.5.1
+
+# Phase F LSTM training dependencies (lstm/ package).
+# Reuses the Phase C torch install above (torch==2.13.0+cpu) -- no new
+# packages needed. No sklearn dependency either: lstm/scaling.py implements
+# a from-scratch Min-Max scaler (see lstm/README.md) rather than adding
+# scikit-learn for one class.
+
+# Transitive dependencies of yfinance, pinned for a fully reproducible venv.
+# beautifulsoup4 is also now a direct first-party dependency of
+# ingestion/article_titles.py (Phase I headline enrichment, below) -- no
+# version change, it's already pinned here for yfinance.
+beautifulsoup4==4.15.0
+cffi==2.1.0
+curl_cffi==0.15.0
+markdown-it-py==4.2.0
+mdurl==0.1.2
+multitasking==0.0.13
+numpy==2.5.1
+pandas==3.0.3
+peewee==4.2.6
+platformdirs==4.11.0
+protobuf==7.35.1
+pycparser==3.0
+Pygments==2.20.0
+python-dateutil==2.9.0.post0
+pytz==2026.2
+rich==15.0.0
+six==1.17.0
+soupsieve==2.9.1
+websockets==16.1.1
+
+# Phase G backtest dependencies (backtest/ package).
+# Installed into .venv with: pip install matplotlib
+# Used only for backtest/run_backtest.py's equity-curve plot
+# (backtest/equity_curves.png). Degrades gracefully (skips the plot, still
+# writes CSV/JSON metrics) if absent -- see backtest/README.md.
+matplotlib==3.11.1
+contourpy==1.3.3
+cycler==0.12.1
+fonttools==4.63.0
+kiwisolver==1.5.0
+packaging==26.2
+pillow==12.3.0
+pyparsing==3.3.2
+
+# Phase H API dependencies (api/ package).
+# Installed into .venv with: pip install fastapi uvicorn
+# Reuses the already-pinned pydantic==2.13.4 above (fastapi>=2.9.0 requirement
+# is satisfied). Pinned via `pip freeze` on 2026-07-24.
+fastapi==0.140.0
+uvicorn==0.51.0
+
+# Transitive dependencies of fastapi/uvicorn, pinned for a fully reproducible venv.
+annotated-doc==0.0.4
+click==8.4.2
+starlette==1.3.1
+
+# Phase I OSINT headline enrichment (ingestion/article_titles.py).
+# No new packages: reuses requests (Phase A, above) for fetching and the
+# already-pinned beautifulsoup4==4.15.0 (yfinance transitive dep, above) for
+# title extraction. Fetches the real article title for GDELT-derived events
+# (which have no headline field at ingestion time) from their SOURCEURL,
+# caching every result in a new scraped_titles table so a URL is never
+# fetched twice. See ingestion/article_titles.py's module docstring.

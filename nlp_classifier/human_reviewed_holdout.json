@@ -1,0 +1,434 @@
+[
+  {
+    "event_id": "6d9f2fd8363bb4c99dc0eac2c548c24aed309475788c1c61ed99817d0810c905",
+    "title": "After KFC shortage warning, Japan frozen food supplier reboots from cyberattack",
+    "text_snippet": "",
+    "rule_based_label": "supply_chain_fab_disruption",
+    "human_label": "unclassified",
+    "human_reasoning": "Cyberattack + supply-chain language, but this is a Japanese frozen-food supplier, not a semiconductor fab -- off-sector false positive on generic keyword match (ambiguity 3 pattern extended to supply_chain category)."
+  },
+  {
+    "event_id": "94fa841995bca3a9a075fd00af5487acdea172381615fed8afa14cd9f1375cf4",
+    "title": "Landslide buries residents in southwest China's Chongqing",
+    "text_snippet": "",
+    "rule_based_label": "natural_disaster",
+    "human_label": "natural_disaster",
+    "human_reasoning": "Genuine physical hazard (landslide) reported as the article's subject -- matches category def. Note: China is not an MVP corridor country (US/Taiwan/S.Korea), so corridor relevance is thin, but the event_type definition itself is not country-gated."
+  },
+  {
+    "event_id": "38aa7733bf154f729f7f7d3295f32ffab481afd628b6072f6e07a11edb443759",
+    "title": "Rescuers race to find survivors in China landslide",
+    "text_snippet": "",
+    "rule_based_label": "natural_disaster",
+    "human_label": "natural_disaster",
+    "human_reasoning": "Same underlying landslide story; hazard is the foregrounded subject."
+  },
+  {
+    "event_id": "087f3de37ece81178c6cd1d2dc53b8ddaf71add3d6f28a245a46e91e006c4018",
+    "title": "Toyota Tsusho ships auto parts to Mexico and Canada, cutting out US tariff",
+    "text_snippet": "",
+    "rule_based_label": "trade_export_control",
+    "human_label": "unclassified",
+    "human_reasoning": "About a company logistics workaround to an existing tariff, not a new export-control/tariff action, and about auto parts, not semiconductors -- no concrete new trade action, off-sector."
+  },
+  {
+    "event_id": "1e4413a19d44c8ee7382ff8f673ece43c498c0c75857d4c4bf7958c53e39ab45",
+    "title": "Trump rips Canada as wildfire smoke spreads, says U.S. will add pollution cost to tariffs",
+    "text_snippet": "The smoke coming from active wildfires in Canada has led to unhealthy air quality in swaths of the U.S., which could affect the World Cup final in New Jersey.",
+    "rule_based_label": "trade_export_control",
+    "human_label": "trade_export_control",
+    "human_reasoning": "Concrete tariff threat by a government actor ('will add pollution cost to tariffs') -- fits category def even though not chip-specific (category covers tariffs generally, chip-specific is only the cited example); severity=proposed/threatened not enacted -> band 3."
+  },
+  {
+    "event_id": "64009a0ae5f0165a2ba209b5bbac2454839191fdca5c7e511b517122e57323fe",
+    "title": "Trump threatens higher Canada tariffs over fires",
+    "text_snippet": "",
+    "rule_based_label": "trade_export_control",
+    "human_label": "trade_export_control",
+    "human_reasoning": "Same tariff-threat story; concrete but not-yet-enacted action -> band 3."
+  },
+  {
+    "event_id": "6cc414cad2763f0b01f583e70e4266fd02450d01dda1918236a5dcbb54f5fed7",
+    "title": "Oregon wins $15 million federal semiconductor grant – with potential to grow to $160 million - OregonLive.com",
+    "text_snippet": "<a href=\"https://news.google.com/rss/articles/CBMi2wFBVV95cUxQMzVKQnRQZzBfY01YWTZUMFkyRVYxRWhtWnhoalg3d3JkSkd4TDduV1B2d0NFWV9DY3Z3WWFxN1ZuSGNwQlFyMzg3bnRBdlNYQm1xT2w4Zk42VmFVNWtYVGRHUkx0aFplcTBMVkVxMldKckVqSGJzQ211NURTWW1QU0pmakF3NDEzWVZ4TlBBOGc0aWhWbHJ4SDBsdWxCOW9ndzA5RC01ZGlORGxCdkJSMEJxakF4M0VVSX",
+    "rule_based_label": "regulatory_subsidy_action",
+    "human_label": "regulatory_subsidy_action",
+    "human_reasoning": "Textbook fit: federal subsidy/grant explicitly targeting a semiconductor project."
+  },
+  {
+    "event_id": "e4320b05153d25cdc152d4f7d1476c571c430f350c2765b6c4b2bc28f2e9d3ee",
+    "title": "Oregon lands $15M federal semiconductor grant - Axios",
+    "text_snippet": "<a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxOMmJmWFliV3BacGgwWTB6VHBEbk1Hd0p1b3JZeHpnMi11NzFjLWo1WVo4T2hzLTZQaWg1M0FRV3NLM2hhbnJmWlRkUl82aW9OUlZHdnA4QjlXdGlueUVBbThXcGRtcTZJZzhSNWoyZmpZR3JJUWtQQ1FwVFZzeEhaV3BGT1huRklGNUNIOUVSY25CM0U?oc=5\" target=\"_blank\">Oregon lands $15M federal se",
+    "rule_based_label": "regulatory_subsidy_action",
+    "human_label": "regulatory_subsidy_action",
+    "human_reasoning": "Duplicate coverage of the same Oregon semiconductor grant story."
+  },
+  {
+    "event_id": "627eec999da48c0f95014ada2f8a0879d9d8faa9b2b028a773ded40c034bf6b2",
+    "title": "As IPOs surge, Hong Kong’s audit regulator vows tougher scrutiny",
+    "text_snippet": "Hong Kong’s auditing watchdog has vowed to strengthen inspections of newly listed companies as a surge in initial public offerings raises concerns about the quality of financial reporting.\nThe Accounting and Financial Reporting Council (AFRC), the city’s independent accounting regulator, said evalua",
+    "rule_based_label": "regulatory_subsidy_action",
+    "human_label": "unclassified",
+    "human_reasoning": "Regulatory action, but targets IPO/audit compliance generally, not semiconductor firms specifically -- category def requires 'targeting semiconductor firms'; rule-labeler false positive on generic 'regulator'/'regulatory ruling' keywords."
+  },
+  {
+    "event_id": "f2b861062ba9d742b096a1d4c92daea36d1a81418addc8c807e510d1eb93adcd",
+    "title": "Best high-yield savings interest rates today, Friday, July 17, 2026: Multiple banks offering up to 4.10% APY",
+    "text_snippet": "",
+    "rule_based_label": "macroeconomic_conditions",
+    "human_label": "unclassified",
+    "human_reasoning": "Recurring daily consumer savings-rate almanac post, not a macro policy/market event -- same over-absorption failure mode documented in labeling/README.md for the mortgage-rates almanac."
+  },
+  {
+    "event_id": "42e7f1b00cead70fbf036735472e99df8cfaf6998230be4afcf088b56cf2a575",
+    "title": "If Interest Rates Climb, This Financial ETF Could Be a Big Winner",
+    "text_snippet": "",
+    "rule_based_label": "macroeconomic_conditions",
+    "human_label": "unclassified",
+    "human_reasoning": "Routine single-ETF investment-strategy commentary hinging on a hypothetical rate scenario, not a concrete macro event or data release -- matches severity-1 'analyst commentary' anchor, and I judge the whole article isn't really about macro conditions as its subject."
+  },
+  {
+    "event_id": "46e04685197d45337fba1ad45d853a0ffa6e52a31366e741216cbaee34959977",
+    "title": "'WarshGPT': How Wall Street is adapting to the Fed's new era of communication",
+    "text_snippet": "Investment firms are readying for an era with less public commentary from the U.S. central bank. Some are relying on AI for an edge.",
+    "rule_based_label": "macroeconomic_conditions",
+    "human_label": "macroeconomic_conditions",
+    "human_reasoning": "Genuinely about a change in Federal Reserve communication practice under new leadership -- real (if minor) macro-relevant development, not a routine rate table."
+  },
+  {
+    "event_id": "67ed2796f304639abd00d1cd542121058b8f7850cd3bc7efe6f1277a5f7eb64e",
+    "title": "Mortgage and refinance interest rates today, Friday, July 17, 2026: Rates are mixed today",
+    "text_snippet": "",
+    "rule_based_label": "macroeconomic_conditions",
+    "human_label": "unclassified",
+    "human_reasoning": "Same recurring daily rate-table pattern as [10]; not a discrete event."
+  },
+  {
+    "event_id": "cbf6b46b28d36359e6f2c2a8276d794494d8fdca385fae7bb4bd95d1ef50f089",
+    "title": "China’s slowing economic growth boosts case for stimulus",
+    "text_snippet": "China’s economy grew at the slowest pace in nearly four years in the second quarter, with sluggish consumption amid the fallout from the Iran war offsetting strong export growth.\nThe 4.3 per cent increase in gross domestic product, down from 5 per cent in the first three months of the year, dragged ",
+    "rule_based_label": "macroeconomic_conditions",
+    "human_label": "macroeconomic_conditions",
+    "human_reasoning": "Concrete GDP data release (4.3% growth, slowest in ~4 years) with policy implication (stimulus case) -- squarely fits category def; severity ~ band 3 (concrete data, not yet an enacted policy)."
+  },
+  {
+    "event_id": "e10d035a8d80b0ddf549ced791358d5c90281c581fc11ff77919fa8ae5e4228b",
+    "title": "UNESCO to list sites ‘under threat’ of war, climate change",
+    "text_snippet": "",
+    "rule_based_label": "geopolitical_military_tension",
+    "human_label": "unclassified",
+    "human_reasoning": "'War' appears in an unrelated context (heritage-site preservation listing), not describing actual military tension/conflict -- keyword false positive."
+  },
+  {
+    "event_id": "71493c566c064576fd6da063b316980899dff9c48faeae5987475ff22b63f126",
+    "title": "US-Iran war highlights vulnerability of Mideast undersea cables",
+    "text_snippet": "",
+    "rule_based_label": "geopolitical_military_tension",
+    "human_label": "geopolitical_military_tension",
+    "human_reasoning": "Directly about an active US-Iran military conflict and its infrastructure fallout -- clear fit, severity high (active war)."
+  },
+  {
+    "event_id": "a7ae35f8f4d217ea27882d8f842d625294aed38426829d9e2fa750ef3fb93839",
+    "title": "China’s power exports to Asean surge 40% in first half of 2026 amid Hormuz tensions",
+    "text_snippet": "China’s power exports to Asean countries surged more than 40 per cent in the first half of the year, customs data showed, helping to buffer the region against volatility in energy markets triggered by tensions around the Strait of Hormuz.\nThe increase also highlighted China’s growing role as a regio",
+    "rule_based_label": "geopolitical_military_tension",
+    "human_label": "macroeconomic_conditions",
+    "human_reasoning": "Subject foregrounded is power-export/economic data; Hormuz military tension is only background context, not the article's focus -- per the taxonomy's own 'foreground' rule (see ambiguity 1 reasoning applied by analogy), this is macro/trade content, not a military-tension story."
+  },
+  {
+    "event_id": "5eef371a95acbd9e4ba9f540e81681a8aab2e643e4ab93b8f33580a343197fd1",
+    "title": "Dow Jones Futures: Iran Attack Kills Two U.S. Troops; Google, Tesla, AMD Ahead",
+    "text_snippet": "",
+    "rule_based_label": "geopolitical_military_tension",
+    "human_label": "geopolitical_military_tension",
+    "human_reasoning": "Headline directly reports a fatal Iran attack on US troops -- unambiguous military conflict event, severity 5 (troops killed)."
+  },
+  {
+    "event_id": "e996639617bab8cbd3b9120295039eebe8e01f2b4509d9482502d356854f6e5c",
+    "title": "Bitcoin and ethereum prices today, Friday, July 17, 2026: Prices ease as conflict in Iran escalates",
+    "text_snippet": "",
+    "rule_based_label": "geopolitical_military_tension",
+    "human_label": "unclassified",
+    "human_reasoning": "Primarily a routine crypto-price recap; the Iran conflict is cited only as market-moving context, not the article's subject -- matches severity-1 'recap' anchor."
+  },
+  {
+    "event_id": "66c9abdb00b4ae6e480aa06eee51b041e43a7df7403155ff0aecd28057b0bc71",
+    "title": "Taiwan Semiconductor Q2 Earnings Beat Estimates, Revenues Rise Y/Y - Yahoo Finance",
+    "text_snippet": "<a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxORThmTi1UNU04U3RhZmZRdkVSb2I1dlBMTzZTOEwwTFlpRlB4UnNNeVVBX1gwZGE1ajdpRG1DWmU3UkFLTW9wSkJJeldyZ3d3WWdubnl4cVU4UVVER0JrRlRlLThEVzJ1SXI1M2pnV3E4WTBjRW9KREdVMmgtTlBDY18yc3N1QVp2Zlk0Vk1LT0tmZ3VQNmQ0NGNYWWV5RmhsQUNmZg?oc=5\" target=\"_blank\">Taiwa",
+    "rule_based_label": "corporate_strategic",
+    "human_label": "corporate_strategic",
+    "human_reasoning": "Earnings report for a tracked company (TSM) -- direct fit; severity 2 (routine beat, not a major surprise/guidance shock)."
+  },
+  {
+    "event_id": "c9bde6f9bff7b24514ad9596de5092fca55c64b057cede8a20ad50144600105f",
+    "title": "Chinese memory giant CXMT oversubscribed 212 times in mega Shanghai IPO",
+    "text_snippet": "More than 9.4 million investor accounts applied for shares in the blockbuster initial public offering (IPO) of ChangXin Memory Technologies (CXMT), with retail demand reaching about 212 times the shares initially available online.\nInvestors submitted valid applications for nearly 817 billion shares ",
+    "rule_based_label": "corporate_strategic",
+    "human_label": "corporate_strategic",
+    "human_reasoning": "CXMT is a memory-chip (DRAM) manufacturer -- semiconductor-sector IPO, concrete capital-raise event; not a tracked ticker but clearly sector-relevant. Severity ~3 (large IPO, not existential)."
+  },
+  {
+    "event_id": "ead551c2db1a13334dc24ab1f338776b393113281a8d6eaf148fc9dab4a6d1ce",
+    "title": "SpaceX (SPCX) Loses Its IPO Premium as a Bigger Supply Test Looms",
+    "text_snippet": "",
+    "rule_based_label": "corporate_strategic",
+    "human_label": "unclassified",
+    "human_reasoning": "SpaceX is not a tracked company nor a semiconductor firm -- off-sector."
+  },
+  {
+    "event_id": "1f8f9c5ed8d6b1bbca7688325814ba408482d4791370ee951c00b19c06d4f739",
+    "title": "Anthropic in early talks with Meta to acquire compute power",
+    "text_snippet": "The talks come weeks after Anthropic announced a similar deal with Elon Musk's SpaceX to use the computing capacity at its Colossus 1 data center",
+    "rule_based_label": "corporate_strategic",
+    "human_label": "unclassified",
+    "human_reasoning": "AI-compute deal between non-tracked, non-semiconductor companies -- indirectly relevant to chip demand but not material to any tracked company or a semiconductor firm itself; judged off-scope rather than stretching corporate_strategic to any AI-adjacent headline."
+  },
+  {
+    "event_id": "2a973b809c6e6dc0847bb7434596bac3fe8e6f57bfd09c31cd9fcc436c34dd3c",
+    "title": "Fanatics CEO Michael Rubin on two sports businesses his multibillion-dollar conglomerate won't enter",
+    "text_snippet": "Fanatics has become one of the most influential companies in sports, building out a massive merchandise, collectibles and sports gambling platform.",
+    "rule_based_label": "corporate_strategic",
+    "human_label": "unclassified",
+    "human_reasoning": "Sports merchandise company, no semiconductor/corridor relevance whatsoever."
+  },
+  {
+    "event_id": "f95ac242e62a0dc887e3bc5d639a627067d3e0f8d8664590ddb6ad25b5ea2eb9",
+    "title": "KOSPI earnings are better. So why are stocks falling harder?",
+    "text_snippet": "",
+    "rule_based_label": "corporate_strategic",
+    "human_label": "unclassified",
+    "human_reasoning": "Reads as routine 'why are stocks moving' market commentary (severity-1 anchor), not a concrete company/policy action, despite touching a corridor country's (South Korea) index."
+  },
+  {
+    "event_id": "c48174e9d09db6af7cee334dada47e4b92ed7e92a999484b2186065208016e03",
+    "title": "China’s DeepSeek to raise fresh capital at $74 billion valuation ahead of onshore IPO, sources say",
+    "text_snippet": "",
+    "rule_based_label": "corporate_strategic",
+    "human_label": "unclassified",
+    "human_reasoning": "DeepSeek is an AI model company, not a semiconductor firm or tracked ticker -- same reasoning as [23]; indirect chip-demand relevance isn't enough under the category's 'tracked companies' framing."
+  },
+  {
+    "event_id": "be33ccec8e1b301bf9f5a934de20920f5a75a3b3fff6eef6236231127285dec5",
+    "title": "Taiwan Semiconductor Manufacturing Company Limited (TSM) Not at Risk of Losing Competitive Edge, CEO Says - Yahoo Finance",
+    "text_snippet": "<a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxNVWZ1QWJBVjNSQU1nQmZtOG4wVU40WUZrbTJoMkhJNUtoQm05STRyNDlKNzViZHBKcFFHeGJPb2FxbGQtR3ZBUzFHcGRpdWdfUU9rNXQtNFRTaFdhSVllYWFTVEp5c0dEZW9POTF4cXBsZVM5dVF1R0QwZHpmcHBMQksxVzdxV1BpMEFFNndsSEdJYkhhVlh0UHhCQ3VTS0VYNWlzb3ZWb3h3QkxPRWpFNjd6YjNVdw?oc=",
+    "rule_based_label": "corporate_strategic",
+    "human_label": "corporate_strategic",
+    "human_reasoning": "Executive commentary from a tracked company's CEO on competitive position -- fits category def ('executive changes' is the closest listed anchor is loose but this is squarely company-specific strategic commentary); severity 2 (reassurance statement, not a concrete action)."
+  },
+  {
+    "event_id": "2026f3912739127e1a8376acce8c2250c087007ad9546c013a9b85e0490a748f",
+    "title": "Fewer Asian companies list in US, but IPO proceeds outpace last year",
+    "text_snippet": "",
+    "rule_based_label": "corporate_strategic",
+    "human_label": "unclassified",
+    "human_reasoning": "Broad market-trend recap about Asian IPOs generally, no specific tracked company or semiconductor-sector action."
+  },
+  {
+    "event_id": "b96ebf1a5f9fc459c289fa3c410b9f17cfc6ff7b1c8a934f5ccc4ee67083fad4",
+    "title": "Hilton launches Tempo hotel brand amid expanding China travel demand",
+    "text_snippet": "Global hotel chain operator Hilton has introduced a new brand to China, a move an executive says reflects the company’s belief tourism will remain a strong growth engine in the world’s second-largest economy.\nThe US hospitality group announced on Tuesday that its Tempo by Hilton lifestyle brand woul",
+    "rule_based_label": "corporate_strategic",
+    "human_label": "unclassified",
+    "human_reasoning": "Hospitality brand launch -- no semiconductor/corridor relevance."
+  },
+  {
+    "event_id": "c33f496a12977b6f0c8fa607bad476fec44b62836f2fc55eac6a438e3071a337",
+    "title": "Why Is Taiwan Semiconductor Stock Falling Friday? - Taiwan Semiconductor (NYSE:TSM) - Benzinga",
+    "text_snippet": "<a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxONGF1LXpWMmo3OHQzaUtkLVA2a1FQMnhlc1VWYUZPR3k5d2hkOGFfZE5ORnZFZkZBSkRPT1UwWUxydG1mR1BhN3RmOTNHZm45cFMyby0zZ1VtZFFNcmRlaEs4UU4ydVAzaGwwSFY3WlZ6bjlFMHZtNlhrV2dYRWE1cUFKNXhTOHdIZURFd2FXRzN3WGVZZzhCUDhlMGV2M2JJMS05S1hHcUsyaXdwV0hIYnRXNmthbmF3a0",
+    "rule_based_label": "unclassified",
+    "human_label": "unclassified",
+    "human_reasoning": "Routine daily stock-move explainer for TSM, no concrete underlying action -- correctly unclassified by the rule labeler too; agrees with severity-1 anchor."
+  },
+  {
+    "event_id": "0aed1158b7bb6f792aa914b505f4e65401da4be62059d5f3de1d043617991917",
+    "title": "American sneaker brand closes more stores",
+    "text_snippet": "",
+    "rule_based_label": "unclassified",
+    "human_label": "unclassified",
+    "human_reasoning": "No corridor/sector relevance."
+  },
+  {
+    "event_id": "0304d10ab85318557d30d289b8267dd1927f528e9232ecd1ce56dfa9434c4a82",
+    "title": "Wolfspeed vs Navitas Patent Infringement Lawsuit Details - quasa.io",
+    "text_snippet": "<a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxQYUpyTHdPdDd1bEVUalNRWXFDWXlDUVZhNjRERUFfajdBOHMxaTRFSmtIbXJDTThVQ21Rdm5HZVV2dGlyMHF3N3pIREl6MTVqMFZuZVJSNUlfYnJpLXhTWUtaUzB2OE5JNm5la203aGE1VThoZ3dBNV9BSjgxcjgzcHpHNkJGSU1KMlNtQnJtZDlnY242NE1ZYUxKeXVCdw?oc=5\" target=\"_blank\">Wolfspeed vs ",
+    "rule_based_label": "unclassified",
+    "human_label": "corporate_strategic",
+    "human_reasoning": "Boundary case, flagged: Wolfspeed and Navitas are semiconductor (SiC/GaN power) companies, and a patent-infringement lawsuit is a concrete material legal/corporate action between them -- judged corporate_strategic despite neither being one of the 5 tracked tickers, because both are genuine semiconductor-sector companies. This is a real rule-labeler recall gap (no litigation keyword in the dictionary)."
+  },
+  {
+    "event_id": "bf1aaf3a0857e77ec8373da9e99eb8d828adf52542287781b15498928a4ce474",
+    "title": "Foundation calls for educational reform",
+    "text_snippet": "",
+    "rule_based_label": "unclassified",
+    "human_label": "unclassified",
+    "human_reasoning": "No corridor/sector relevance."
+  },
+  {
+    "event_id": "b4cfac4e5aafd5391902ee3b026d5fa8decbbe856dcdf73fa3217036e2e246f7",
+    "title": "Bosch begins sample production at its first US semiconductor plant - Reuters",
+    "text_snippet": "<a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxPei11ZnBrbjFKZmpSOVE4TThEU1h4VkU4ZW1tVEExQkdrQU5IRHRSVy1QcXlTVHVMOVJLcDREZV9hNVNGZHFsdUppaVlKNHV2cVdoNVZEdkFYRTBLeVRmWGZqZUtHV2VKRjNqV001ajJWY3VWcDVlSV9jb2RsUkc1UE1DdVFUVEhCbXlGRkJmbG56Tm9ZQVowdEE5Sy1oaGpqWkRVWDdFbU5MWElhQmhReTZabENXanFwZn",
+    "rule_based_label": "unclassified",
+    "human_label": "corporate_strategic",
+    "human_reasoning": "Genuine recall gap: this is a concrete capacity-expansion/facility milestone at a US semiconductor plant, squarely matching corporate_strategic's 'capacity expansion' inclusion, but the rule dictionary's exact-phrase 'capacity expansion' keyword doesn't appear in this headline -- rule labeler missed it. Severity ~4 (new plant beginning production is a notable, if not existential, capacity milestone)."
+  },
+  {
+    "event_id": "a7b42dd00dc812073831cb56d2ed92c619fed7c6f98ccca8925768e32f950a2f",
+    "title": "The $3.3 trillion chip sell-off is nearing a bear market: Chart of the Day - Yahoo Finance",
+    "text_snippet": "<a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOcVlsMWt2cWktMm14V1ZldkJhN1BIbmVTaFQ0WHIyTGRMUzZGMnRVT05zWXRzT3prRHdjQjRtR0ZxRWpKYXNVVlBCTjFVVEhnZk1ycHpwNEx0cU45Y1VnWFlsaVpmd1dNOGdQUnBIbUVHQS1nRGhCTnROcXZ4dHZYdE5pRUVSMGNVc25zVnR0czdmWVpmOENwYVZwbkoyVXhpXzhnb3lhN0t5TzlLRkRSSldMSl82RWRUVU",
+    "rule_based_label": "unclassified",
+    "human_label": "macroeconomic_conditions",
+    "human_reasoning": "Genuine recall gap: describes a large, concrete semiconductor-sector market sell-off nearing bear-market territory -- real macro/market-conditions content, but doesn't contain any of the rule dictionary's literal rate/inflation/GDP/Fed keywords, so the rule labeler missed it entirely. Severity ~3 (significant market move, not an enacted policy)."
+  },
+  {
+    "event_id": "deefe1ad7e3c9d153bab3b70d0d0c0a30d0dcc8b1214f44bcf1ae2820202d118",
+    "title": "China is supercharging a Philippine solar boom",
+    "text_snippet": "",
+    "rule_based_label": "unclassified",
+    "human_label": "unclassified",
+    "human_reasoning": "Solar/Philippines -- no corridor relevance."
+  },
+  {
+    "event_id": "f707d4bba8aaa455335b8d634b552af4f220586957a3f0185bc0bb40ae95e994",
+    "title": "Graft Polyol Market Growth to Accelerate by 2035 Amid Semiconductor and EV Battery Trends - News and Statistics - IndexBox",
+    "text_snippet": "<a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxNdE5HSDA0SncxU2kwck5JNy1xTFJpS1VuSC1lN1d1emtNbjRqbWhjNDNaNzdNc1lOU1lDS242QkZPbzJhQklsUDNxY29kRTVjeWtLUkhBUW9QWEZlS05wWk1VSlJTNmtEQmViZjNrQ0lXaVMxY2hPWHFPVmdKWndtVDRQNVlQTFNVcU0zWUlSNG54c3VaNjJSWXJSSl9FTmJSUTdaWDhac0dPLWpoM2gycTRpdGFNdWhTQU",
+    "rule_based_label": "unclassified",
+    "human_label": "unclassified",
+    "human_reasoning": "Generic industrial-chemical market forecast that happens to mention 'semiconductor' in passing -- same 'Toward 2035' pattern documented in labeling/README.md; no concrete event."
+  },
+  {
+    "event_id": "e03d71f0c696bc4a85583e09f6fb1cde38cc7e9c3e0201f1af0c6c3035c943cd",
+    "title": "What Makes Indie Semiconductor (INDI) a Compelling Bet? - Yahoo Finance",
+    "text_snippet": "<a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxOYjdZOUx1ZDNjRFJLMy1SaGF6UTdEMmg5YmhnaEN3a2g0VHY0QUNOVC1JYXluWWk4TU1tNTZwUUUwUFBEWlotSEZRcy1WYmpMemhaWDVxOGc4d0g5aFF0QUlFSV9oUlJ5Si1HejZ4M1NIZG1hTzBDVWtsbWs3Vk5sQl9OQXRQOU84RWVwTUFBdTU5TnJmcHJhWWo3VmZpNGNvaDZJSUhBWGJKUQ?oc=5\" target=\"_blan",
+    "rule_based_label": "unclassified",
+    "human_label": "unclassified",
+    "human_reasoning": "Routine analyst 'compelling bet' commentary on a semiconductor stock, no concrete action -- severity-1 anchor."
+  },
+  {
+    "event_id": "7a5c46126a4b746d05f81bd91592ddc2b4ea1fb4067aa9e0933f7ecc5b0f5e94",
+    "title": "South Korea’s turbulence seen as boon for Hong Kong stocks as capital migration under way",
+    "text_snippet": "Chinese technology stocks trading in Hong Kong are emerging as beneficiaries of tumult in the South Korean market, analysts say, pointing to investors rotating out of crowded bets and into undervalued assets, positioning for a rebound.\nThe Hang Seng Tech Index, which tracks Alibaba and other key Hon",
+    "rule_based_label": "unclassified",
+    "human_label": "macroeconomic_conditions",
+    "human_reasoning": "Genuine recall gap: article is substantively about South Korean market turbulence and capital migration (a corridor country's market conditions), but contains none of the rule dictionary's literal macro keywords."
+  },
+  {
+    "event_id": "2a516533681f854faa03e5c3406080683d577d74799f374fd7dc8020beaa060e",
+    "title": "Micron’s sharp pullback: Is short-term pain a buying opportunity?",
+    "text_snippet": "",
+    "rule_based_label": "unclassified",
+    "human_label": "unclassified",
+    "human_reasoning": "Routine single-stock analyst commentary, no concrete action -- severity-1 anchor (Micron is sector-relevant but this is 'buy the dip' commentary, not an event)."
+  },
+  {
+    "event_id": "e8770d84df051aa98a4ec5f1a5fba17fc17b69d8bfb13472485f620f3ca2de63",
+    "title": "Chip worker shortage puts U.S. semiconductor boom on the brink - Los Angeles Times",
+    "text_snippet": "<a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxNZmY5aXltZHlhcGNYQWE3LXFidEMtVWZIaXp5QlZNNDFPclFTVFUwX1FTbUg4UDZHRHNQN1NwbnV4NGJMRk4xZVpoUHJyMEk4YnBic2Y0djZzS1Y2d0NyM2dnN1hVR3E0cWcxRDJmMnBzbmszeGJLbzMzSVhXemhnd0txdlUtSi1lMWxvR3RjdEZZNXV1OTZKRllRcmU2SVJxb3MxQjBTUWhaNU0?oc=5\" target=\"_bla",
+    "rule_based_label": "unclassified",
+    "human_label": "supply_chain_fab_disruption",
+    "human_reasoning": "Documented recall gap (also called out in labeling/README.md): labor shortage constraining chip production/expansion is a real supply-chain risk, but the rule dictionary only has the exact phrase 'chip shortage', not 'chip worker shortage'. Severity ~3 (concrete workforce constraint, not yet an actual production halt)."
+  },
+  {
+    "event_id": "3473ec9435d731f0e8e5eadcc4540541ff38113a5ce776f1f1499a8682dcede1",
+    "title": "PlayStation may regret ejecting the disc",
+    "text_snippet": "",
+    "rule_based_label": "unclassified",
+    "human_label": "unclassified",
+    "human_reasoning": "No corridor/sector relevance."
+  },
+  {
+    "event_id": "e7d08014a202852d05c98adc1dbf2da49498353a610b95a7970763403504765b",
+    "title": "Prediction: SOXX Is About to Outperform SMH. Here's Why.",
+    "text_snippet": "",
+    "rule_based_label": "unclassified",
+    "human_label": "unclassified",
+    "human_reasoning": "Routine ETF-comparison analyst commentary, no concrete event."
+  },
+  {
+    "event_id": "de08b4ffe666503f8071130dfdd4e4d2b783419e23996c83af5f44feb6649e66",
+    "title": "Beginning with a song",
+    "text_snippet": "",
+    "rule_based_label": "unclassified",
+    "human_label": "unclassified",
+    "human_reasoning": "No text available and title gives no evidence of any corridor/sector relevance."
+  },
+  {
+    "event_id": "12bba1b0ccab0bbe7ec16a4d54740304c250faf83accd5faf2180449b0d24342",
+    "title": "Japan's Kawasaki Heavy proposes making naphtha from hydrogen",
+    "text_snippet": "",
+    "rule_based_label": "unclassified",
+    "human_label": "unclassified",
+    "human_reasoning": "Industrial chemistry/energy story, no semiconductor/corridor relevance."
+  },
+  {
+    "event_id": "adfde4455ffcf0ab0a67e6c7a861a97d5c113c29e8db39c158d1c3e126335767",
+    "title": "Chemische Filter Market Forecast Points Higher Toward 2035 Driven by Semiconductor Expansion - IndexBox",
+    "text_snippet": "<a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxQRHN4MGM5dEcwN1VOdTBWcFFCMjRRdm8tallvbVlVZ0Nnd2hROG8wRFc3S1k4YjloYUhSeGtnOGZJbm9SV0NUaW1ZeDhuVHJjWkhjRDV1R3JWQ1lHWTFhSWN4SkFPbzVwVG1vN0JpRldxXzljRHpYLWJiVkZmS0VVYjhMOUlLRDhxbERSRlAyeXJHZHJaQ2pleC1pTDNEUERON19DZHJUSVkzSFVQekQtbXA5RFEzbm1aWV",
+    "rule_based_label": "unclassified",
+    "human_label": "unclassified",
+    "human_reasoning": "Same generic industrial-forecast pattern as [37]; mentions 'semiconductor expansion' only as a market driver, no concrete event."
+  },
+  {
+    "event_id": "66c2d0c9bea8b90810e629be22100108c4f1f3a78692c8bdc70b970508df4e5e",
+    "title": "China channels the Third Reich",
+    "text_snippet": "",
+    "rule_based_label": "unclassified",
+    "human_label": "unclassified",
+    "human_reasoning": "No text available; title reads as historical/political commentary, not a description of current military tension or any other category -- insufficient evidence to assign a real category."
+  },
+  {
+    "event_id": "7c05beca11b374aa7343477e4bdd91dde8c0157b19912b1bc1e4e7b40b8c0a1f",
+    "title": "Tesla stock: How much does an improved auto business matter?",
+    "text_snippet": "",
+    "rule_based_label": "unclassified",
+    "human_label": "unclassified",
+    "human_reasoning": "Tesla is not a tracked company or semiconductor firm."
+  },
+  {
+    "event_id": "a2a36614310e564cf5311aaf799e162fb90ca47120c31123245834872fbaac0c",
+    "title": "Taiwan in Time: From ‘anti-communist hero’ to death row",
+    "text_snippet": "",
+    "rule_based_label": "unclassified",
+    "human_label": "unclassified",
+    "human_reasoning": "Historical/political feature about a past figure, not current geopolitical tension or any other category, despite the Taiwan mention."
+  },
+  {
+    "event_id": "6d51312e7bdd27baf9ac81c42af1ba765010b007315221e1f699189859049e82",
+    "title": "India launches first hydrogen train amid rail modernization drive",
+    "text_snippet": "",
+    "rule_based_label": "unclassified",
+    "human_label": "unclassified",
+    "human_reasoning": "No corridor/sector relevance."
+  },
+  {
+    "event_id": "3e341d751257cd5c70c9c1f27454c81fdf8c5d8cd40417e4020f250d219e1ac1",
+    "title": "Meta Platforms Is Up 21% This Month, and Here Is What's Driving the Surge",
+    "text_snippet": "",
+    "rule_based_label": "unclassified",
+    "human_label": "unclassified",
+    "human_reasoning": "Meta is not a tracked company or semiconductor firm; routine stock-move commentary."
+  },
+  {
+    "event_id": "b4781122db175d55d43e36e2d55defd6aeead3f57a181a5e4f086c89b51a26ca",
+    "title": "Ethereum Price Prediction: Thin Volumes Increase Risk of a Drop Below $1.8K",
+    "text_snippet": "",
+    "rule_based_label": "unclassified",
+    "human_label": "unclassified",
+    "human_reasoning": "Crypto content, no corridor/sector relevance."
+  },
+  {
+    "event_id": "ff0c96fa4830e5f9c4988c9641307e5bf455f6cc5bb503f36098f75ea5ee693e",
+    "title": "Where Japan's forests and farmland meet, a way of life is under threat",
+    "text_snippet": "",
+    "rule_based_label": "unclassified",
+    "human_label": "unclassified",
+    "human_reasoning": "No corridor/sector relevance."
+  },
+  {
+    "event_id": "66cf393c6a3173fbf1fbfb3a76d4ddc32288f19cc98268987898ff327c7986c4",
+    "title": "China Semiconductor ETF: Are Investors Overlooking A Key Component in The Global AI Supply Chain? - KraneShares",
+    "text_snippet": "<a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxNUmhfSTlXYUtuMktUMlprVmozWTdwYzNZWVhMcWVBdXh0VTZmbWQzS1RwTDNRd2pwV1hUUldaY05lQ285ak9GTm1aU1V3TlRoYnJWcWVzVC1RSWV4WV93bzc2YU1kbVJWcXlUakNKdW8weTVWQ0dlcGxKaGtKNlUydGgwYndHNnIyMjRUMC01dmhHQ25CZURpdEtuN0trUXdXVjZiYTBXdXUwSnhOcW9ydGk5RFU1SkFHd2",
+    "rule_based_label": "unclassified",
+    "human_label": "unclassified",
+    "human_reasoning": "Routine sector-ETF analyst commentary, no concrete event -- severity-1 anchor."
+  }
+]
